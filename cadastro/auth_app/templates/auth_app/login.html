@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <br>
+    <section>
+    {% if msg %}
+        <div class= "tela">
+            <p style="color: rgb(25, 22, 231);">{{ msg }}</p>
+            <br>
+            <a href="/">Tentar novamente</a>
+            <br><br>
+        </div>
+    {% else %}
+    
+    <form class="tela" action="" method="post">{% csrf_token %}
+        <h2>Login:</h2>
+        <input type="text" name="nome" id="" placeholder="Login" required>
+        <br>
+        <input type="password" name="senha" id="" placeholder="Senha" required>
+        <button type="submit">ENVIAR</button>
+        </form>
+    {% endif %}
+
+</section>
+</body>
+</html>
